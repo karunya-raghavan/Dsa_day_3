@@ -29,4 +29,13 @@ class Solution {
             for (int i = 0, j = i + len - 1; j < n; i++, j++) {
                 if (i == j)
                     palindrome[i][j] = true;
-  
+                else if (i + 1 == j)
+                    palindrome[i][j] = (s.charAt(i) == s.charAt(j));
+                else
+                    palindrome[i][j] = (s.charAt(i) == s.charAt(j) && palindrome[i + 1][j - 1]);
+            }
+        }
+
+        return solve(s, 0);
+    }
+}
