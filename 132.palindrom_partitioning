@@ -1,1 +1,41 @@
+class Solution {
+    private int n;
+    private boolean[][] palindrome;
+    private int[] dp;
 
+    private int solve(String s, int i) {
+        if (i == n)
+            return -1;
+
+        if (dp[i] != -1)
+            return dp[i];
+
+        int cuts = n - 1;
+
+        for (int j = i; j < n; j++)
+            if (palindrome[i][j])
+                cuts = Math.min(cuts, 1 + solve(s, j + 1));
+
+        return dp[i] = cuts;
+    }
+
+    public int minCut(String s) {
+        n = s.length();
+        palindrome = new boolean[n][n];
+        dp = new int[n];
+        Arrays.fill(dp, -1);
+
+        for (int len = 1; len <= n; len++) {
+            for (int i = 0, j = i + len - 1; j < n; i++, j++) {
+                if (i == j)
+                    palindrome[i][j] = true;
+                else if (i + 1 == j)
+                    palindrome[i][j] = (s.charAt(i) == s.charAt(j));
+                else
+                    palindrome[i][j] = (s.charAt(i) == s.charAt(j) && palindrome[i + 1][j - 1]);
+            }
+        }
+
+        return solve(s, 0);
+    }
+}
