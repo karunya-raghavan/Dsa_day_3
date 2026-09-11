@@ -4,11 +4,5 @@ class Solution {
         
         while(n !=1){
             if(set.contains(n)){
-                return false;
-            }
-
-            set.add(n);
-     uare(int num){
-        int sum=0;
-
+       
         
