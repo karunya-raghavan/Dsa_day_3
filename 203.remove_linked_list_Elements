@@ -8,8 +8,4 @@ class Solution {
         head.next = removeElements(head.next, val);
 
         // Remove the current node if it matches val
-        if (head.val == val) return head.next;
-
-        return head;
-    }
-}
+     
