@@ -26,15 +26,4 @@ class Solution {
             sum = sum+(temp*temp);
             num = num/10;
 
-        }
-
-        return sum;
-
         
-
-
-
-    }
-
-    
-}
