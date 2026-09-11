@@ -9,13 +9,8 @@ class Solution {
 
             set.add(n);
             n = square(n);
-
-
         }
-
         return true;
-    
-    
     }
 
     public int square(int num){
@@ -29,10 +24,6 @@ class Solution {
         }
 
         return sum;
-
-        
-
-
 
     }
 
