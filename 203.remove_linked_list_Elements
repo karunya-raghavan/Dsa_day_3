@@ -3,9 +3,3 @@ class Solution {
 
         // Base case
         if (head == null) return null;
-
-        // Recursively process the remaining list
-        head.next = removeElements(head.next, val);
-
-        // Remove the current node if it matches val
-     
