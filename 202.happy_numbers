@@ -8,17 +8,7 @@ class Solution {
             }
 
             set.add(n);
-            n = square(n);
-
-
-        }
-
-        return true;
-    
-    
-    }
-
-    public int square(int num){
+     uare(int num){
         int sum=0;
 
         
